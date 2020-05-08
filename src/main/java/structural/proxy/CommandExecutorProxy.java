@@ -1,4 +1,4 @@
 package structural.proxy;
 
-public class CommandExecutorProxy {
+public class CommandExecutorProxy { //protection proxy
 }

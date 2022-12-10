@@ -1,4 +1,4 @@
 package structural.composite;
 
-public class Circle {
+public class Circle  implements Shape{
 }

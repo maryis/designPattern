@@ -1,22 +1,29 @@
 package creational.prototype;
 
-public class User implements Cloneable{
-
-
+public abstract class User implements Cloneable {
     String name;
     String family;
     int age;
     String company;
     String phone;
 
-    public User(String name, String family, int age, String company, String phone) {
-
+    //we don't put public constructor in abstract classes
+    protected User(String name, String family, int age, String company, String phone) {
         loadFromDB();//heavy operation
-        this.name=name;
-        this.family=family;
+        this.name = name;
+        this.family = family;
         this.age = age;
         this.company = company;
         this.phone = phone;
+    }
+
+    //copy constructor
+    private User(User user) {
+        this.name = user.name;
+        this.family = user.family;
+        this.age = user.age;
+        this.company = user.company;
+        this.phone = user.phone;
     }
 
     public User() {
@@ -41,6 +48,7 @@ public class User implements Cloneable{
     public void setFamily(String family) {
         this.family = family;
     }
+
     public int getAge() {
         return age;
     }
@@ -65,20 +73,18 @@ public class User implements Cloneable{
         this.phone = phone;
     }
 
-
     @Override
-    public Object clone() throws CloneNotSupportedException {
-
-        //!! if we use super.clone or this.clone, then it would be shadow copy
-        //because both objs are pointing to same fields
-
-        //deep copy
-        User user =new User();
-        user.name=name;
-        user.family=family;
-        user.age=age;
-        user.company=company;
-
-        return user;
+    protected Object clone() {
+        /** If a class contains only primitive fields or references to immutable objects,
+         *  then it is usually the case that no fields in the object returned by super.clone need to be modified**/
+        Object obj = null;
+        try {
+            obj = super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        return obj;
     }
+
+    public abstract void doSomething();
 }

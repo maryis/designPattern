@@ -1,8 +1,6 @@
 package creational.builder;
 
 public class UserBuilder {  // it can be a public static class inside User
-
-
     String name;
     String family;
     int age;

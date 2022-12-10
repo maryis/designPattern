@@ -2,7 +2,7 @@ package creational.factory;
 
 public class PersonFactory {
 
-    public Person getPerson(String type){
+    public static Person getPerson(String type){
         if (type.equalsIgnoreCase("user")) {
 
             return new User("ali","sdf",34,"","");

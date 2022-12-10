@@ -6,14 +6,11 @@ import org.junit.Test;
 public class TestBuilder {
 
     @Test
-    public void testBuilder() throws CloneNotSupportedException {
+    public void testBuilder() {
+        User u1 = CachedUsers.getUserByType("1");
+        Assert.assertEquals("user1", u1.name);
 
-      User u1=new User("ali","sfs",12,"","");
-      User u2= (User) u1.clone();
-
-        Assert.assertNotEquals("comparing two cloned obj",u1,u2);
-        Assert.assertEquals("comparing two cloned obj att",u1.getName(),u2.getName());
-
-
+        User u2 = CachedUsers.getUserByType("2");
+        Assert.assertEquals("user2", u2.name);
     }
 }

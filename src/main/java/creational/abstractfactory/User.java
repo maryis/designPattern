@@ -1,22 +1,12 @@
-package creational.builder;
+package creational.abstractfactory;
 
-public class User {
-    private String name;
+public class User implements Person {
+
+    String name;
     String family;
     int age;
     String company;
     String phone;
-
-    public User() {
-    }
-
-    public User(String name, String family, int age, String company, String phone) {
-        this.name = name;
-        this.family = family;
-        this.age = age;
-        this.company = company;
-        this.phone = phone;
-    }
 
     public String getName() {
         return name;
@@ -56,5 +46,12 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    @Override
+    public String commonMethod() {
+        return "user";
+
+
     }
 }

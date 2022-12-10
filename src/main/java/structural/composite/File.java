@@ -1,7 +1,6 @@
 package structural.composite;
 
-public class File implements Entry{
-
+public class File implements Entry {
     private String name;
     private String path;
     private int size;
@@ -13,41 +12,21 @@ public class File implements Entry{
 
     @Override
     public void printPath() {
-        System.out.println(path+"/"+name);
-    }
-
-    @Override
-    public int getsize() {
-        return size;
-    }
-
-    @Override
-    public String getName() {
-        return null;
-    }
-
-    @Override
-    public void setName(String name) {
-
-    }
-
-    @Override
-    public String getPath() {
-        return this.path;
-    }
-
-    @Override
-    public void setPath(String path) {
-        this.path=path;
+        System.out.println(absolutePath());
     }
 
     @Override
     public int getSize() {
-        return 0;
+        return this.size;
     }
 
     @Override
-    public void setSize(int size) {
+    public void updatePath(String prefix) {
+        path = prefix;
+    }
 
+    @Override
+    public String absolutePath() {
+        return path + "/" + name;
     }
 }

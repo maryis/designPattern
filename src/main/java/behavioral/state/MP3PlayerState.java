@@ -1,7 +1,5 @@
 package behavioral.state;
 
-public interface
-MP3PlayerState {
-
-    public void play();
+public interface MP3PlayerState {
+    void play();
 }

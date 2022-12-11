@@ -1,8 +1,9 @@
 package behavioral.observer;
 
 public interface Subject {
+    void register(Observer o);
 
-    public void register(Observer o);
-    public void unregister(Observer o);
-    public void notifyAllSubscribers();
+    void unregister(Observer o);
+
+    void notifyAllSubscribers(String newMsg);
 }

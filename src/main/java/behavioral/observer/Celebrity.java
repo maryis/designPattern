@@ -3,9 +3,8 @@ package behavioral.observer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Celebrity implements Subject { //mess Publisher
-
-    List<Observer> followers=new ArrayList();
+public class Celebrity implements Subject {
+    List<Observer> followers = new ArrayList();
     private String name;
     private String curr_job;
 
@@ -15,8 +14,7 @@ public class Celebrity implements Subject { //mess Publisher
 
     public void setCurr_job(String curr_job) {
         this.curr_job = curr_job;
-        notifyAllSubscribers();
-
+        notifyAllSubscribers(curr_job);
     }
 
     public String getName() {
@@ -30,7 +28,6 @@ public class Celebrity implements Subject { //mess Publisher
     @Override
     public void register(Observer o) {
         followers.add(o);
-
     }
 
     @Override
@@ -40,11 +37,9 @@ public class Celebrity implements Subject { //mess Publisher
     }
 
     @Override
-    public void notifyAllSubscribers() {
+    public void notifyAllSubscribers(String newMsg) {
         followers.forEach(follower->{
-            follower.update();
-
+            follower.update(newMsg);
         });
-
     }
 }

@@ -1,25 +1,24 @@
 package behavioral.observer;
 
-public class Follower implements Observer {
+public class Friend implements Observer {
     private String name;
     private String state;
 
-    public Follower(String name) {
-        this.name = name;
-        this.state = state;
+    public String getName() {
+        return name;
     }
 
     public String getState() {
         return state;
     }
 
-    public String getName() {
-        return name;
+    public Friend(String name) {
+        this.name = name;
     }
 
     @Override
     public void update(String newState) {
         this.state = newState;
-        System.out.println("update follower pages:" + name);
+        System.out.println("update friend pages:" + name);
     }
 }

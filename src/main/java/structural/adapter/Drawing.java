@@ -3,15 +3,18 @@ package structural.adapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Drawing { //client
+/**
+ * The client class, an example how we use adapter pattern
+ */
+public class Drawing {
 
-    List<Shape> shapes=new ArrayList<>();
+    List<Shape> shapes = new ArrayList<>();
 
-    public void addShape(Shape s){
+    public void addShape(Shape s) {
         shapes.add(s);
     }
 
-    public void drawAll(){
+    public void drawAll() {
         for (Shape shape : shapes) {
             shape.draw();
         }

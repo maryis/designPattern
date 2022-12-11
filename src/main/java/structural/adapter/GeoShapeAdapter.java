@@ -1,7 +1,6 @@
 package structural.adapter;
 
-public class GeoShapeAdapter implements Shape { //object structural.adapter
-
+public class GeoShapeAdapter implements Shape {
     private GeoShape adaptee;
 
     public GeoShapeAdapter(GeoShape adaptee) {

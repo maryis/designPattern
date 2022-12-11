@@ -1,8 +1,12 @@
 package structural.adapter;
 
-public interface GeoShape  { //adaptee
+/**
+ * This is the adaptee class
+ */
+public interface GeoShape  {
+    void locate();
 
-    public void locate();
-    public boolean isHidden();
-    public void relocate();
+    boolean isHidden();
+
+    void relocate();
 }

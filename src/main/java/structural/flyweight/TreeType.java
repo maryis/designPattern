@@ -1,7 +1,10 @@
 package structural.flyweight;
 import java.awt.*;
 
-public class TreeType { //share memory
+/**
+ * To prevent too many tree objects contain duplicate data (name, color, ..)
+ */
+public class TreeType {
     private String name;
     private Color color;
     private String otherTreeData;
@@ -17,5 +20,6 @@ public class TreeType { //share memory
         g.fillRect(x - 1, y, 3, 5);
         g.setColor(color);
         g.fillOval(x - 5, y - 10, 10, 10);
+        System.out.println(String.format("draw %s with %s", name, otherTreeData));
     }
 }

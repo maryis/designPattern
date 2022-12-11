@@ -1,8 +1,12 @@
 package structural.adapter;
 
-public interface Shape { //target
+/**
+ * This is the target class that adaptee is going to be similar to it
+ */
+public interface Shape {
+    void draw();
 
-    public void draw();
-    public boolean isHidden();
-    public void hide();
+    boolean isHidden();
+
+    void hide();
 }

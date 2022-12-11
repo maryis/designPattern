@@ -1,4 +1,5 @@
 package structural.proxy;
 
-public class CommandExecutor {
+public interface CommandExecutor {
+    void execute(String command);
 }

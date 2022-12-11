@@ -2,12 +2,9 @@ package structural.adapter;
 
 
 public class GeoCircle implements GeoShape {
-
-
     @Override
     public void locate() {
-        System.out.println("the shape is located");
-
+        System.out.println("the shape is located correctly");
     }
 
     @Override
@@ -18,7 +15,5 @@ public class GeoCircle implements GeoShape {
     @Override
     public void relocate() {
         System.out.println("the shape is relocated");
-
-
     }
 }
